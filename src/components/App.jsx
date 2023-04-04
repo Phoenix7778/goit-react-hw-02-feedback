@@ -1,11 +1,11 @@
 import { Component } from 'react';
-import FeedbackOptions from './feedback/FeedbackOptions';
-import Notification from './notification/Notification';
-import Section from './section/Section';
-import Statistics from './statistics/Statistics';
-import { Container } from './container/Container.styled';
+import { FeedbackOptions } from './feedbackOptions/FeedbackOptions';
+import { Notification } from './notification/Notification';
+import { Section } from './section/Section';
+import { Statistics } from './statistics/Statistics';
+import { Container } from './App.styled';
 
-class App extends Component {
+export class App extends Component {
   state = {
     good: 0,
     neutral: 0,
@@ -22,7 +22,6 @@ class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () =>
-    this.countTotalFeedback() &&
     Math.round((this.state.good / this.countTotalFeedback()) * 100);
 
   render() {
@@ -52,5 +51,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
